@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Teranga Académie d'Excellence</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Poppins', sans-serif;
+        }
+
+        body{
+            background:#f7f7f7;
+            color:#0a1f55;
+        }
+
+        :root{
+            --blue:#081f5c;
+            --gold:#d4a437;
+            --white:#ffffff;
+        }
+
+        /* NAVBAR */
+
+        .navbar{
+            background:var(--blue);
+        }
+
+        .navbar-brand{
+            color:white !important;
+            font-weight:700;
+            font-size:28px;
+        }
+
+        .navbar-nav .nav-link{
+            color:white !important;
+            margin-left:15px;
+            font-weight:500;
+        }
+
+        /* HERO */
+
+        .hero{
+            padding:80px 0;
+            background:linear-gradient(rgba(255,255,255,0.95),rgba(255,255,255,0.95)),
+            url('https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1400&auto=format&fit=crop');
+            background-size:cover;
+            background-position:center;
+        }
+
+        .logo-box{
+            background:white;
+            border:4px solid var(--gold);
+            border-radius:20px;
+            padding:30px;
+            text-align:center;
+            box-shadow:0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .logo-box h1{
+            font-size:70px;
+            font-weight:700;
+            color:var(--blue);
+        }
+
+        .logo-box p{
+            font-weight:600;
+        }
+
+        .levels{
+            background:white;
+            padding:30px;
+            border-radius:20px;
+            margin-top:25px;
+            box-shadow:0 10px 25px rgba(0,0,0,0.06);
+        }
+
+        .section-title{
+            background:var(--blue);
+            color:white;
+            padding:15px;
+            border-radius:10px;
+            text-align:center;
+            font-weight:700;
+            margin-bottom:20px;
+        }
+
+        .levels ul{
+            list-style:none;
+            padding-left:0;
+        }
+
+        .levels ul li{
+            margin-bottom:15px;
+            font-size:22px;
+            font-weight:600;
+        }
+
+        .levels ul li i{
+            color:var(--gold);
+            margin-right:10px;
+        }
+
+        .admission{
+            border:2px solid var(--gold);
+            border-radius:20px;
+            padding:25px;
+            text-align:center;
+            margin-top:20px;
+        }
+
+        .admission h3{
+            color:var(--blue);
+            font-weight:700;
+        }
+
+        .admission p{
+            color:var(--gold);
+            font-weight:600;
+        }
+
+        .year{
+            background:var(--blue);
+            color:white;
+            display:inline-block;
+            padding:10px 25px;
+            border-radius:30px;
+            font-weight:700;
+            font-size:24px;
+        }
+
+        .academy-title{
+            font-size:65px;
+            font-weight:700;
+            color:var(--blue);
+        }
+
+        .academy-subtitle{
+            font-size:30px;
+            color:var(--gold);
+            font-weight:600;
+        }
+
+        .hero-badge{
+            display:inline-block;
+            background:var(--blue);
+            color:white;
+            padding:12px 25px;
+            border-radius:40px;
+            margin-top:20px;
+            font-weight:500;
+        }
+
+        .hero-text{
+            font-size:45px;
+            font-weight:700;
+            margin-top:30px;
+        }
+
+        .hero-text span{
+            color:var(--gold);
+        }
+
+        .students-img{
+            width:100%;
+            border-radius:25px;
+            margin-top:30px;
+            box-shadow:0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* FEATURES */
+
+        .features{
+            background:var(--blue);
+            padding:70px 0;
+            color:white;
+        }
+
+        .feature-card{
+            text-align:center;
+            padding:20px;
+        }
+
+        .feature-icon{
+            width:80px;
+            height:80px;
+            background:var(--gold);
+            border-radius:50%;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            margin:auto;
+            margin-bottom:20px;
+            font-size:35px;
+        }
+
+        .feature-card h4{
+            font-weight:700;
+            margin-bottom:15px;
+        }
+
+        /* ENVIRONMENT */
+
+        .environment{
+            padding:80px 0;
+            background:white;
+        }
+
+        .env-title{
+            text-align:center;
+            margin-bottom:50px;
+        }
+
+        .env-title h2{
+            font-size:45px;
+            font-weight:700;
+            color:var(--blue);
+        }
+
+        .env-card{
+            background:white;
+            border-radius:20px;
+            overflow:hidden;
+            box-shadow:0 5px 20px rgba(0,0,0,0.08);
+            transition:0.3s;
+        }
+
+        .env-card:hover{
+            transform:translateY(-8px);
+        }
+
+        .env-card img{
+            width:100%;
+            height:220px;
+            object-fit:cover;
+        }
+
+        .env-card h5{
+            text-align:center;
+            padding:20px;
+            font-weight:700;
+            color:var(--blue);
+        }
+
+        /* CONTACT */
+
+        .contact{
+            background:var(--blue);
+            color:white;
+            padding:50px 0;
+        }
+
+        .contact-box{
+            text-align:center;
+        }
+
+        .contact-box i{
+            font-size:40px;
+            color:var(--gold);
+            margin-bottom:15px;
+        }
+
+        .social-icons a{
+            color:white;
+            font-size:30px;
+            margin:0 10px;
+            transition:0.3s;
+        }
+
+        .social-icons a:hover{
+            color:var(--gold);
+        }
+
+        footer{
+            background:#04133a;
+            color:white;
+            text-align:center;
+            padding:20px;
+            font-size:18px;
+        }
+
+        /* WHATSAPP */
+
+        .whatsapp-float{
+            position:fixed;
+            width:65px;
+            height:65px;
+            bottom:25px;
+            right:25px;
+            background:#25D366;
+            color:white;
+            border-radius:50%;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            font-size:35px;
+            text-decoration:none;
+            box-shadow:0 8px 20px rgba(0,0,0,0.25);
+            z-index:999;
+            transition:0.3s;
+        }
+
+        .whatsapp-float:hover{
+            transform:scale(1.1);
+            color:white;
+            background:#1ebe5d;
+        }
+
+        /* RESPONSIVE */
+
+        @media(max-width:768px){
+
+            .academy-title{
+                font-size:40px;
+            }
+
+            .hero-text{
+                font-size:28px;
+            }
+
+            .logo-box h1{
+                font-size:50px;
+            }
+
+            .env-title h2{
+                font-size:30px;
+            }
+
+        }
+
+    </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+
+    <div class="container">
+
+        <a class="navbar-brand" href="#">
+            TAE
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menu">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Accueil</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="niveaux.html">Niveaux</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Services</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="container">
+
+        <div class="row align-items-center g-5">
+
+            <div class="col-lg-4">
+
+                <div class="logo-box">
+
+                    <h1>TAE</h1>
+
+                    <h4 class="fw-bold">TERANGA</h4>
+
+                    <p>DISCIPLINE • SAVOIR • RÉUSSITE</p>
+
+                </div>
+
+                <div class="levels">
+
+                    <div class="section-title">
+                        NOS NIVEAUX
+                    </div>
+
+                    <ul>
+
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            MATERNELLE
+                        </li>
+
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            PRIMAIRE
+                        </li>
+
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            COLLÈGE
+                        </li>
+
+                    </ul>
+
+                    <div class="admission">
+
+                        <h3>INSCRIPTIONS OUVERTES</h3>
+
+                        <p>POUR L’ANNÉE SCOLAIRE</p>
+
+                        <div class="year">
+                            2026 - 2027
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-8 text-center">
+
+                <h1 class="academy-title">
+                    TERANGA
+                </h1>
+
+                <div class="academy-subtitle">
+                    ACADÉMIE D’EXCELLENCE
+                </div>
+
+                <div class="hero-badge">
+                    FORMER AUJOURD’HUI, BÂTIR DEMAIN
+                </div>
+
+                <div class="hero-text">
+                    L’AVENIR DE VOS ENFANTS
+                    <span>COMMENCE ICI !</span>
+                </div>
+
+                <img class="students-img"
+                src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1400&auto=format&fit=crop">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FEATURES -->
+
+<section class="features">
+
+    <div class="container">
+
+        <div class="row g-4">
+
+            <div class="col-md-4 col-lg-2">
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        <i class="bi bi-book"></i>
+                    </div>
+
+                    <h4>Qualité</h4>
+
+                    <p>
+                        Enseignement moderne et personnalisé.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4 col-lg-2">
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        <i class="bi bi-person-badge"></i>
+                    </div>
+
+                    <h4>Experts</h4>
+
+                    <p>
+                        Des enseignants qualifiés et engagés.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4 col-lg-2">
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        <i class="bi bi-shield-check"></i>
+                    </div>
+
+                    <h4>Sécurité</h4>
+
+                    <p>
+                        Un environnement sécurisé et discipliné.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4 col-lg-2">
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        <i class="bi bi-bar-chart-line"></i>
+                    </div>
+
+                    <h4>Résultats</h4>
+
+                    <p>
+                        Des résultats excellents aux examens.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4 col-lg-2">
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        <i class="bi bi-people"></i>
+                    </div>
+
+                    <h4>Valeurs</h4>
+
+                    <p>
+                        Respect, responsabilité et solidarité.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4 col-lg-2">
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        <i class="bi bi-award"></i>
+                    </div>
+
+                    <h4>Excellence</h4>
+
+                    <p>
+                        Une école tournée vers la réussite.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ENVIRONMENT -->
+
+<section class="environment">
+
+    <div class="container">
+
+        <div class="env-title">
+
+            <h2>
+                UN ENVIRONNEMENT IDÉAL
+            </h2>
+
+            <p class="lead">
+                Pour grandir et réussir
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="env-card">
+
+                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1200&auto=format&fit=crop">
+
+                    <h5>INFRASTRUCTURES MODERNES</h5>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="env-card">
+
+                    <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1200&auto=format&fit=crop">
+
+                    <h5>BIBLIOTHÈQUE</h5>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="env-card">
+
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop">
+
+                    <h5>SALLE INFORMATIQUE</h5>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="env-card">
+
+                    <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?q=80&w=1200&auto=format&fit=crop">
+
+                    <h5>AIRE DE JEUX</h5>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-4">
+
+                <div class="contact-box">
+
+                    <i class="bi bi-geo-alt-fill"></i>
+
+                    <h4>Adresse</h4>
+
+                    <p>
+                        Groupe Nabi Namora <br>
+                        Quartier Almadies 3
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4">
+
+                <div class="contact-box">
+
+                    <i class="bi bi-telephone-fill"></i>
+
+                    <h4>Contact</h4>
+
+                    <h2>778 179 134</h2>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4">
+
+                <div class="contact-box">
+
+                    <h4 class="mb-3">Suivez-nous</h4>
+
+                    <div class="social-icons">
+
+                        <a href="#">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+
+                        <a href="#">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+
+                        <a href="#">
+                            <i class="bi bi-tiktok"></i>
+                        </a>
+
+                        <a href="#">
+                            <i class="bi bi-whatsapp"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+    DISCIPLINE • SAVOIR • RÉUSSITE
+</footer>
+
+<!-- WHATSAPP FLOAT BUTTON -->
+
+<a href="https://wa.me/221778179134"
+   class="whatsapp-float"
+   target="_blank">
+
+    <i class="bi bi-whatsapp"></i>
+
+</a>
+
+<!-- Bootstrap JS -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

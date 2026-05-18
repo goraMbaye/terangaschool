@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Services - Teranga Académie</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        *{
+            font-family:'Poppins', sans-serif;
+        }
+
+        body{
+            background:#f4f6fb;
+        }
+
+        :root{
+            --blue:#081f5c;
+            --gold:#d4a437;
+        }
+
+        /* NAVBAR */
+
+        .navbar{
+            background:var(--blue);
+            padding:15px 0;
+        }
+
+        .navbar-brand{
+            color:white !important;
+            font-size:28px;
+            font-weight:700;
+        }
+
+        .navbar-nav .nav-link{
+            color:white !important;
+            margin-left:15px;
+            font-weight:500;
+        }
+
+        /* HERO */
+
+        .hero{
+            background:
+            linear-gradient(rgba(8,31,92,0.85),rgba(8,31,92,0.85)),
+            url('https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1400&auto=format&fit=crop');
+
+            background-size:cover;
+            background-position:center;
+            padding:120px 0;
+            text-align:center;
+            color:white;
+        }
+
+        .hero h1{
+            font-size:60px;
+            font-weight:700;
+        }
+
+        .hero p{
+            font-size:22px;
+            margin-top:20px;
+        }
+
+        /* SERVICES */
+
+        .services{
+            padding:90px 0;
+        }
+
+        .service-card{
+            background:white;
+            border-radius:25px;
+            padding:40px 30px;
+            text-align:center;
+            height:100%;
+            transition:0.3s;
+            box-shadow:0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .service-card:hover{
+            transform:translateY(-10px);
+        }
+
+        .service-icon{
+            width:90px;
+            height:90px;
+            background:var(--gold);
+            color:white;
+            border-radius:50%;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            margin:auto;
+            margin-bottom:25px;
+            font-size:40px;
+        }
+
+        .service-card h3{
+            color:var(--blue);
+            font-weight:700;
+            margin-bottom:20px;
+        }
+
+        .service-card p{
+            color:#555;
+            line-height:1.8;
+        }
+
+        /* EXTRA SECTION */
+
+        .extra-section{
+            padding:80px 0;
+            background:white;
+        }
+
+        .extra-box{
+            background:var(--blue);
+            color:white;
+            padding:50px;
+            border-radius:30px;
+        }
+
+        .extra-box h2{
+            font-weight:700;
+            margin-bottom:25px;
+        }
+
+        .extra-list{
+            list-style:none;
+            padding-left:0;
+        }
+
+        .extra-list li{
+            margin-bottom:15px;
+            font-size:18px;
+        }
+
+        .extra-list i{
+            color:var(--gold);
+            margin-right:10px;
+        }
+
+        /* CTA */
+
+        .cta{
+            padding:90px 0;
+            text-align:center;
+        }
+
+        .cta-box{
+            background:linear-gradient(135deg,var(--blue),#102b7c);
+            color:white;
+            padding:70px 40px;
+            border-radius:30px;
+        }
+
+        .cta-box h2{
+            font-size:45px;
+            font-weight:700;
+            margin-bottom:20px;
+        }
+
+        .cta-box p{
+            font-size:20px;
+            margin-bottom:30px;
+        }
+
+        .btn-cta{
+            background:var(--gold);
+            color:white;
+            border:none;
+            padding:15px 35px;
+            border-radius:15px;
+            font-size:18px;
+            font-weight:600;
+        }
+
+        .btn-cta:hover{
+            background:white;
+            color:var(--blue);
+        }
+
+        /* FOOTER */
+
+        footer{
+            background:#04133a;
+            color:white;
+            text-align:center;
+            padding:25px;
+        }
+
+        /* WHATSAPP */
+
+        .whatsapp-float{
+            position:fixed;
+            width:65px;
+            height:65px;
+            bottom:25px;
+            right:25px;
+            background:#25D366;
+            color:white;
+            border-radius:50%;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            font-size:35px;
+            text-decoration:none;
+            z-index:999;
+            transition:0.3s;
+        }
+
+        .whatsapp-float:hover{
+            transform:scale(1.1);
+            color:white;
+        }
+
+        /* RESPONSIVE */
+
+        @media(max-width:768px){
+
+            .hero h1{
+                font-size:40px;
+            }
+
+            .hero p{
+                font-size:18px;
+            }
+
+            .cta-box h2{
+                font-size:30px;
+            }
+
+        }
+
+    </style>
+
+</head>
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+
+    <div class="container">
+
+        <a class="navbar-brand" href="#">
+            TAE
+        </a>
+
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#menu">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div class="collapse navbar-collapse" id="menu">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        Accueil
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        Niveaux
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">
+                        Services
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="container">
+
+        <h1>
+            Nos Services
+        </h1>
+
+        <p>
+            Des services modernes pour accompagner la réussite et l’épanouissement de chaque élève.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section class="services">
+
+    <div class="container">
+
+        <div class="row g-5">
+
+            <!-- SERVICE -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        <i class="bi bi-book"></i>
+                    </div>
+
+                    <h3>
+                        Enseignement de Qualité
+                    </h3>
+
+                    <p>
+                        Des programmes adaptés avec des enseignants qualifiés pour garantir la réussite scolaire des élèves.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- SERVICE -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        <i class="bi bi-laptop"></i>
+                    </div>
+
+                    <h3>
+                        Informatique
+                    </h3>
+
+                    <p>
+                        Initiation et formation aux outils numériques pour préparer les élèves aux métiers du futur.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- SERVICE -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        <i class="bi bi-translate"></i>
+                    </div>
+
+                    <h3>
+                        Langues
+                    </h3>
+
+                    <p>
+                        Renforcement en anglais et en communication pour développer les compétences linguistiques.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- SERVICE -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        <i class="bi bi-dribbble"></i>
+                    </div>
+
+                    <h3>
+                        Activités Sportives
+                    </h3>
+
+                    <p>
+                        Football, basket, jeux éducatifs et activités physiques pour le bien-être des élèves.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- SERVICE -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        <i class="bi bi-shield-check"></i>
+                    </div>
+
+                    <h3>
+                        Sécurité
+                    </h3>
+
+                    <p>
+                        Un environnement sécurisé et discipliné pour garantir la tranquillité des parents.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- SERVICE -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        <i class="bi bi-bus-front"></i>
+                    </div>
+
+                    <h3>
+                        Transport Scolaire
+                    </h3>
+
+                    <p>
+                        Service de transport sécurisé pour faciliter les déplacements des élèves.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- EXTRA -->
+
+<section class="extra-section">
+
+    <div class="container">
+
+        <div class="extra-box">
+
+            <div class="row align-items-center">
+
+                <div class="col-lg-6">
+
+                    <h2>
+                        Pourquoi choisir Teranga Académie ?
+                    </h2>
+
+                    <p>
+                        Une école moderne centrée sur l’excellence académique, la discipline et l’épanouissement des élèves.
+                    </p>
+
+                </div>
+
+                <div class="col-lg-6">
+
+                    <ul class="extra-list">
+
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            Encadrement professionnel
+                        </li>
+
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            Classes modernes
+                        </li>
+
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            Activités culturelles
+                        </li>
+
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            Suivi personnalisé
+                        </li>
+
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            Résultats excellents
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CTA -->
+
+<section class="cta">
+
+    <div class="container">
+
+        <div class="cta-box">
+
+            <h2>
+                Inscrivez Votre Enfant Dès Aujourd’hui
+            </h2>
+
+            <p>
+                Offrez à votre enfant une éducation moderne et un avenir prometteur.
+            </p>
+
+            <button class="btn btn-cta">
+                Commencer l’inscription
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+    © 2026 Teranga Académie d’Excellence - Tous droits réservés
+
+</footer>
+
+<!-- WHATSAPP -->
+
+<a href="https://wa.me/221778179134"
+   class="whatsapp-float"
+   target="_blank">
+
+    <i class="bi bi-whatsapp"></i>
+
+</a>
+
+<!-- JS -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
